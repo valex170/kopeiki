@@ -1321,3 +1321,7 @@ select:focus-visible {
         padding: 20px;
     }
 }
+/* Безопасная область iPhone */
+.app {
+    padding-top: calc(25px + env(safe-area-inset-top, 0px));
+}
