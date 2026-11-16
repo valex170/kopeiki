@@ -1,0 +1,1323 @@
+
+/* ===================================
+   КОПЕЙКИ — PREMIUM DARK DESIGN
+   =================================== */
+
+:root {
+    --bg: #0b1120;
+    --surface: #151e2e;
+    --surface-light: #1b2939;
+    --surface-hover: #243448;
+
+    --accent: #70dda7;
+    --accent-dark: #245b45;
+    --accent-soft: #193d32;
+
+    --text: #f4f7f8;
+    --muted: #94a3b8;
+    --border: rgba(148, 163, 184, 0.13);
+
+    --red: #ff8585;
+    --green: #70dda7;
+
+    --radius: 20px;
+}
+
+/* Общие настройки */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(
+            ellipse at 50% -20%,
+            rgba(50, 112, 88, 0.15),
+            transparent 55%
+        ),
+        var(--bg);
+
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    line-height: 1.45;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+::selection {
+    background: rgba(112, 221, 167, 0.3);
+    color: white;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* Главный контейнер */
+
+.app {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 25px 20px calc(115px + env(safe-area-inset-bottom));
+}
+
+/* ===================================
+   ШАПКА
+   =================================== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    color: var(--accent);
+}
+
+.header p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+
+    background: linear-gradient(
+        145deg,
+        #285b47,
+        #193b31
+    );
+
+    color: var(--accent);
+    border: 1px solid rgba(112, 221, 167, 0.2);
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 20px #00000030;
+}
+
+/* ===================================
+   БАЛАНС
+   =================================== */
+
+.balance-card {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(112, 221, 167, 0.2),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #20523f,
+            #16372e
+        );
+
+    padding: 27px 24px;
+    border-radius: 25px;
+    margin-bottom: 22px;
+
+    border: 1px solid rgba(112, 221, 167, 0.14);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.balance-card > p {
+    color: #b7d9ca;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.balance-card h2 {
+    font-size: clamp(27px, 8vw, 36px);
+    letter-spacing: -1px;
+    font-weight: 800;
+    margin: 13px 0 28px;
+    overflow-wrap: anywhere;
+}
+
+.balance-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.balance-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.balance-info span {
+    color: #b7d9ca;
+    font-size: 12px;
+}
+
+.balance-info strong {
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+/* ===================================
+   РАСХОДЫ ПО ПЕРИОДАМ
+   =================================== */
+
+.expenses-period-card {
+    background: linear-gradient(
+        145deg,
+        #182638,
+        #141f2e
+    );
+
+    border: 1px solid var(--border);
+    padding: 21px;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.expenses-period-card h2 {
+    margin-bottom: 18px;
+}
+
+.expenses-period-card .balance-info {
+    gap: 10px;
+}
+
+.expenses-period-card .balance-info div {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.045);
+    padding: 12px 9px;
+    border-radius: 13px;
+    gap: 8px;
+}
+
+.expenses-period-card .balance-info span {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.expenses-period-card .balance-info strong {
+    font-size: 14px;
+    color: var(--accent);
+}
+
+/* ===================================
+   РАЗДЕЛЫ
+   =================================== */
+
+.section {
+    margin-bottom: 26px;
+}
+
+.section h2 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    margin-bottom: 16px;
+}
+
+/* ===================================
+   БЫСТРЫЕ ДЕЙСТВИЯ
+   =================================== */
+
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+.action-btn {
+    flex: 1;
+    min-height: 92px;
+
+    border: 1px solid transparent;
+    border-radius: 18px;
+
+    padding: 15px 10px;
+
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        background 0.2s ease;
+}
+
+.action-btn span {
+    display: block;
+    font-size: 27px;
+    font-weight: normal;
+    margin-bottom: 6px;
+}
+
+.income-btn {
+    background: linear-gradient(
+        145deg,
+        #28664d,
+        #1c4939
+    );
+
+    border-color: rgba(112, 221, 167, 0.15);
+}
+
+.expense-btn {
+    background: linear-gradient(
+        145deg,
+        #713e43,
+        #492c35
+    );
+
+    border-color: rgba(255, 133, 133, 0.12);
+}
+
+.action-btn:hover {
+    filter: brightness(1.15);
+}
+
+.action-btn:active {
+    transform: scale(0.96);
+}
+
+/* ===================================
+   ДИАГРАММА РАСХОДОВ
+   =================================== */
+
+.expense-chart-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: 14px;
+
+    background: linear-gradient(
+        145deg,
+        #182638,
+        #141e2d
+    );
+
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 17px 12px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+#expenseChart {
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    margin: auto;
+}
+
+.expense-chart-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    min-width: 0;
+}
+
+.expense-legend-item {
+    display: grid;
+    grid-template-columns: 10px minmax(0, 1fr);
+    align-items: center;
+    gap: 7px 8px;
+    min-width: 0;
+}
+
+.expense-legend-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 4px;
+    grid-row: span 2;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.07);
+}
+
+.expense-legend-item span:not(.expense-legend-color) {
+    color: #cbd5e1;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.expense-legend-item strong {
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+#expenseChartEmpty {
+    margin-top: 10px;
+    padding: 25px 15px;
+    background: var(--surface);
+    border-radius: 16px;
+}
+
+/* ===================================
+   ИСТОРИЯ ОПЕРАЦИЙ
+   =================================== */
+
+.transactions {
+    background: linear-gradient(
+        145deg,
+        #192638,
+        #141e2c
+    );
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 17px;
+
+    min-height: 65px;
+}
+
+.empty {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.transaction-history {
+    margin-top: 15px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.transaction-history summary {
+    padding: 15px;
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    list-style-position: inside;
+}
+
+.transaction-history[open] summary {
+    border-bottom: 1px solid var(--border);
+}
+
+/* Операция */
+
+.transaction-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.transaction-row:last-child {
+    border-bottom: none;
+}
+
+.transaction-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+    flex: 1;
+}
+
+.transaction-info strong {
+    font-size: 14px;
+    color: var(--text);
+}
+
+.transaction-info span {
+    font-size: 11px;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+}
+
+.transaction-row > strong {
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.transaction-income {
+    color: var(--green);
+}
+
+.transaction-expense {
+    color: var(--red);
+}
+
+/* Кнопки управления операциями */
+
+.transaction-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 7px;
+}
+
+.transaction-actions button {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 7px 10px;
+
+    background: var(--surface-hover);
+    color: #d1d5db;
+
+    font-size: 11px;
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.transaction-actions button:hover {
+    background: #33475f;
+}
+
+.transaction-actions .delete-btn {
+    background: #492c35;
+    border-color: rgba(255, 133, 133, 0.15);
+    color: #ffaaaa;
+}
+
+/* ===================================
+   УПРАВЛЕНИЕ КАТЕГОРИЯМИ
+   =================================== */
+
+.category-manage-btn {
+    width: 100%;
+    padding: 16px;
+
+    background: linear-gradient(
+        145deg,
+        #19283a,
+        #152131
+    );
+
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.category-manage-btn:hover {
+    background: var(--surface-hover);
+    border-color: rgba(112, 221, 167, 0.25);
+}
+
+.category-manage-btn:active {
+    transform: scale(0.98);
+}
+
+#categoryList {
+    margin-top: 20px;
+    max-height: 280px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+
+    color: var(--text);
+    font-size: 13px;
+}
+
+.category-item span {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.category-item button {
+    flex-shrink: 0;
+    width: auto;
+    margin: 0;
+    padding: 8px 10px;
+
+    background: var(--surface-hover);
+    color: #ffffff;
+
+    font-size: 11px;
+    border-radius: 8px;
+}
+
+.category-item .delete-category {
+    background: #492c35;
+    color: #ffaaaa;
+}
+
+.category-item input[type="color"] {
+    flex-shrink: 0;
+    width: 38px;
+    height: 34px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 3px;
+    background: var(--surface);
+}
+
+#categoryType,
+#newCategory {
+    margin-bottom: 5px;
+}
+
+/* ===================================
+   НИЖНЯЯ НАВИГАЦИЯ
+   =================================== */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 500px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 12px 7px calc(12px + env(safe-area-inset-bottom));
+
+    background: rgba(19, 29, 44, 0.94);
+    border-top: 1px solid var(--border);
+
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.22);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    z-index: 50;
+}
+
+.bottom-nav button {
+    flex: 1;
+    min-width: 0;
+
+    background: none;
+    border: none;
+
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 500;
+
+    padding: 9px 3px;
+    border-radius: 11px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.bottom-nav button.active {
+    color: var(--accent);
+    background: rgba(112, 221, 167, 0.09);
+    font-weight: bold;
+}
+
+/* ===================================
+   МОДАЛЬНЫЕ ОКНА
+   =================================== */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(3, 8, 16, 0.82);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+    z-index: 100;
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: linear-gradient(
+        145deg,
+        #1b293b,
+        #131e2d
+    );
+
+    border: 1px solid rgba(148, 163, 184, 0.15);
+
+    width: 100%;
+    max-width: 420px;
+    max-height: 88vh;
+
+    overflow-y: auto;
+
+    padding: 25px;
+    border-radius: 24px;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+}
+
+.modal-content h2 {
+    margin-bottom: 23px;
+    color: var(--accent);
+    font-size: 21px;
+    letter-spacing: -0.4px;
+}
+
+.modal-content label {
+    display: block;
+    color: #cbd5e1;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 15px 0 8px;
+}
+
+.modal-content input:not([type="color"]),
+.modal-content select {
+    width: 100%;
+    padding: 14px;
+
+    background: #0e1725;
+    color: white;
+
+    border: 1px solid #344358;
+    border-radius: 12px;
+
+    outline: none;
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(112, 221, 167, 0.1);
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 15px;
+
+    margin-top: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        filter 0.2s ease;
+}
+
+.modal-content button:active {
+    transform: scale(0.98);
+}
+
+/* Сохранить */
+
+#saveOperation {
+    background: linear-gradient(
+        135deg,
+        #82e9b5,
+        #56c994
+    );
+
+    color: #10251c;
+    box-shadow: 0 5px 15px rgba(112, 221, 167, 0.12);
+}
+
+#saveOperation:hover {
+    filter: brightness(1.08);
+}
+
+/* Отмена */
+
+#closeModal,
+#closeCategoryModal {
+    background: #2d3b4e;
+    color: white;
+}
+
+#closeModal:hover,
+#closeCategoryModal:hover {
+    background: #394b61;
+}
+
+/* Добавление категории */
+
+#addCategory {
+    background: #245b45;
+    color: #ffffff;
+}
+
+/* ===================================
+   ПОЛОСЫ ПРОКРУТКИ
+   =================================== */
+
+#categoryList::-webkit-scrollbar,
+.modal-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+#categoryList::-webkit-scrollbar-thumb,
+.modal-content::-webkit-scrollbar-thumb {
+    background: #40536a;
+    border-radius: 10px;
+}
+
+/* ===================================
+   МОБИЛЬНАЯ АДАПТАЦИЯ
+   =================================== */
+
+@media (max-width: 380px) {
+    .app {
+        padding: 20px 14px calc(110px + env(safe-area-inset-bottom));
+    }
+
+    .balance-card {
+        padding: 22px 18px;
+    }
+
+    .balance-card h2 {
+        font-size: 27px;
+    }
+
+    .expenses-period-card {
+        padding: 16px 12px;
+    }
+
+    .expenses-period-card .balance-info {
+        gap: 6px;
+    }
+
+    .expenses-period-card .balance-info div {
+        padding: 10px 6px;
+    }
+
+    .expenses-period-card .balance-info strong {
+        font-size: 12px;
+    }
+
+    .expense-chart-layout {
+        gap: 8px;
+        padding: 12px 8px;
+    }
+
+    .expense-legend-item strong {
+        font-size: 10px;
+    }
+
+    .expense-legend-item span:not(.expense-legend-color) {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 330px) {
+    .expense-chart-layout {
+        grid-template-columns: 1fr;
+    }
+
+    #expenseChart {
+        max-width: 210px;
+    }
+
+    .expense-chart-legend {
+        width: 100%;
+    }
+}
+
+/* ===================================
+   КАТЕГОРИИ — МОБИЛЬНЫЙ ДИЗАЙН
+   =================================== */
+
+#categoryList {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 55vh;
+    overflow-y: auto;
+    padding: 4px 3px;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+    padding: 13px 8px;
+    border-bottom: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.category-item > span {
+    flex: 1;
+    min-width: 0;
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+/* Круглый выбор цвета */
+
+.category-color-picker {
+    appearance: none;
+    -webkit-appearance: none;
+
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+
+    padding: 3px;
+    border: 2px solid #475569;
+    border-radius: 50%;
+
+    background: transparent;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.category-color-picker::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.category-color-picker::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+.category-color-picker::-moz-color-swatch {
+    border: none;
+    border-radius: 50%;
+}
+
+/* Кнопки управления */
+
+.category-item-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    gap: 6px;
+}
+
+.category-item-actions button {
+    width: auto;
+    min-height: 36px;
+    margin: 0;
+    padding: 8px 10px;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    background: var(--surface-hover);
+    color: var(--text);
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.category-item-actions .delete-category {
+    background: #492c35;
+    color: #ffaaaa;
+    border-color: rgba(255, 133, 133, 0.15);
+}
+
+/* Маленькие экраны */
+
+@media (max-width: 380px) {
+    .category-item {
+        gap: 7px;
+        padding: 12px 4px;
+    }
+
+    .category-item > span {
+        font-size: 12px;
+    }
+
+    .category-color-picker {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .category-item-actions {
+        gap: 4px;
+    }
+
+    .category-item-actions button {
+        min-height: 34px;
+        padding: 7px 8px;
+        font-size: 10px;
+    }
+}
+
+/* Выпадающий список типа категории */
+
+#categoryType {
+    width: 100%;
+    min-height: 48px;
+    padding: 13px 14px;
+
+    background-color: #0e1725;
+    color: #f4f7f8;
+
+    border: 1px solid #344358;
+    border-radius: 12px;
+
+    font-size: 14px;
+    color-scheme: dark;
+
+    outline: none;
+    cursor: pointer;
+}
+
+#categoryType:focus {
+    border-color: #70dda7;
+    box-shadow: 0 0 0 3px rgba(112, 221, 167, 0.1);
+}
+
+#categoryType option {
+    background-color: #192638;
+    color: #f4f7f8;
+    padding: 12px;
+}
+
+/* ===================================
+   ПЕРЕКЛЮЧЕНИЕ ЭКРАНОВ
+   =================================== */
+
+.app-screen {
+    display: none;
+}
+
+.app-screen.active {
+    display: block;
+    animation: screenAppear 0.2s ease;
+}
+
+@keyframes screenAppear {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Нижняя навигация */
+
+.bottom-nav button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-height: 54px;
+}
+
+.bottom-nav button span {
+    font-size: 21px;
+    line-height: 1;
+}
+
+.bottom-nav button.active span {
+    color: #70dda7;
+}
+
+/* ===================================
+   ОБЩЕЕ ВЫРАВНИВАНИЕ ЭКРАНОВ
+   =================================== */
+
+.app-screen {
+    width: 100%;
+}
+
+.app-screen > .section {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    font-size: 19px;
+    line-height: 1.35;
+    margin-bottom: 15px;
+    text-align: left;
+    letter-spacing: -0.3px;
+}
+
+.screen-description {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: -5px;
+    margin-bottom: 20px;
+}
+
+/* ===================================
+   НАСТРОЙКИ
+   =================================== */
+
+.settings-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 18px;
+    margin-bottom: 18px;
+
+    background: linear-gradient(
+        145deg,
+        #192638,
+        #141e2d
+    );
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.settings-group h3 {
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 3px;
+    text-align: left;
+}
+
+.settings-group .category-manage-btn {
+    margin: 0;
+    padding: 15px 16px;
+    text-align: left;
+    line-height: 1.4;
+    border-radius: 12px;
+}
+
+.settings-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    padding: 5px 2px;
+
+    color: var(--text);
+}
+
+.settings-info strong {
+    font-size: 15px;
+}
+
+.settings-info span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* ===================================
+   ИСТОРИЯ ОПЕРАЦИЙ
+   =================================== */
+
+#screen-history .transactions {
+    padding: 18px;
+}
+
+#screen-history .transaction-row {
+    padding: 16px 0;
+    align-items: flex-start;
+}
+
+#screen-history .transaction-info {
+    gap: 7px;
+}
+
+#screen-history .transaction-actions {
+    margin-top: 5px;
+}
+
+/* ===================================
+   СТАТИСТИКА
+   =================================== */
+
+.statistics-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 220px;
+    padding: 25px 20px;
+
+    background: linear-gradient(
+        145deg,
+        #192638,
+        #141e2d
+    );
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    text-align: center;
+}
+
+.statistics-placeholder-icon {
+    font-size: 38px;
+    margin-bottom: 5px;
+}
+
+.statistics-placeholder h3 {
+    font-size: 17px;
+}
+
+.statistics-placeholder p {
+    max-width: 260px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ===================================
+   ОКНА И ФОРМЫ
+   =================================== */
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.modal-content h2 {
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.modal-content label {
+    margin-top: 13px;
+    margin-bottom: 4px;
+    line-height: 1.5;
+}
+
+.modal-content button {
+    line-height: 1.4;
+}
+
+#categoryList {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* ===================================
+   МОБИЛЬНОЕ ВЫРАВНИВАНИЕ
+   =================================== */
+
+@media (max-width: 380px) {
+
+    .app {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .section h2 {
+        font-size: 18px;
+    }
+
+    .settings-group {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .settings-group .category-manage-btn {
+        padding: 14px 12px;
+        font-size: 13px;
+    }
+
+    .screen-description {
+        font-size: 12px;
+    }
+
+    .transaction-row {
+        gap: 8px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+}

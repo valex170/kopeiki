@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1120">
+    <title>КОПЕЙКИ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.png">
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- ШАПКА -->
+        <header class="header">
+            <div>
+                <h1>₸ КОПЕЙКИ</h1>
+                <p>Мои деньги. Мои правила.</p>
+            </div>
+            <div class="avatar">₸</div>
+        </header>
+
+        <main>
+
+            <!-- =================================
+                 ЭКРАН 1. ГЛАВНАЯ
+                 ================================= -->
+
+            <section id="screen-home" class="app-screen active">
+
+                <!-- Баланс -->
+                <section class="balance-card">
+                    <p>МОЙ БАЛАНС</p>
+                    <h2 id="balance">0 ₸</h2>
+
+                    <div class="balance-info">
+                        <div>
+                            <span>Доходы</span>
+                            <strong id="income">0 ₸</strong>
+                        </div>
+
+                        <div>
+                            <span>Расходы</span>
+                            <strong id="expenses">0 ₸</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Расходы за периоды -->
+                <section class="section expenses-period-card">
+                    <h2>Мои расходы</h2>
+
+                    <div class="balance-info">
+                        <div>
+                            <span>Сегодня</span>
+                            <strong id="expenseDay">0 ₸</strong>
+                        </div>
+
+                        <div>
+                            <span>За неделю</span>
+                            <strong id="expenseWeek">0 ₸</strong>
+                        </div>
+
+                        <div>
+                            <span>За месяц</span>
+                            <strong id="expenseMonth">0 ₸</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Быстрое действие -->
+                <section class="section">
+                    <h2>Быстрое действие</h2>
+
+                    <div class="actions">
+                        <button class="action-btn income-btn" type="button">
+                            <span>＋</span>
+                            Доход
+                        </button>
+
+                        <button class="action-btn expense-btn" type="button">
+                            <span>－</span>
+                            Расход
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Диаграмма -->
+                <section class="section">
+                    <h2>Расходы по категориям</h2>
+
+                    <div class="expense-chart-layout">
+                        <canvas
+                            id="expenseChart"
+                            width="320"
+                            height="320">
+                        </canvas>
+
+                        <div
+                            id="expenseChartLegend"
+                            class="expense-chart-legend">
+                        </div>
+                    </div>
+
+                    <p id="expenseChartEmpty" class="empty" hidden>
+                        В этом месяце расходов пока нет
+                    </p>
+                </section>
+
+            </section>
+
+
+            <!-- =================================
+                 ЭКРАН 2. ИСТОРИЯ
+                 ================================= -->
+
+            <section id="screen-history" class="app-screen">
+
+                <section class="section">
+                    <h2>История операций</h2>
+
+                    <p class="screen-description">
+                        Все твои доходы и расходы
+                    </p>
+
+                    <div id="transactions" class="transactions">
+                        <p class="empty">Пока операций нет</p>
+                    </div>
+                </section>
+
+            </section>
+
+
+            <!-- =================================
+                 ЭКРАН 3. СТАТИСТИКА
+                 ================================= -->
+
+            <section id="screen-stats" class="app-screen">
+
+                <section class="section">
+                    <h2>Статистика</h2>
+
+                    <p class="screen-description">
+                        Анализ твоих финансов
+                    </p>
+
+                    <div id="statisticsContent" class="statistics-content">
+                        <div class="statistics-placeholder">
+                            <span class="statistics-placeholder-icon">📊</span>
+
+                            <h3>Финансовая аналитика</h3>
+
+                            <p>
+                                Здесь появится статистика доходов,
+                                расходов и сравнение месяцев.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </section>
+
+
+            <!-- =================================
+                 ЭКРАН 4. НАСТРОЙКИ
+                 ================================= -->
+
+            <section id="screen-settings" class="app-screen">
+
+                <section class="section">
+                    <h2>Настройки</h2>
+
+                    <p class="screen-description">
+                        Управление приложением и данными
+                    </p>
+
+                    <!-- Категории -->
+                    <div class="settings-group">
+                        <h3>Категории</h3>
+
+                        <button
+                            id="manageCategories"
+                            class="category-manage-btn"
+                            type="button">
+                            ⚙️ Управление категориями
+                        </button>
+                    </div>
+
+                    <!-- Мои данные -->
+                    <div class="settings-group">
+                        <h3>Резервное копирование</h3> 
+                        <br>
+                        <button
+                            id="exportExcel"
+                            class="category-manage-btn"
+                            type="button">
+                            📥 Экспорт в Excel
+                        </button>
+                        <br>
+                        <button
+                            id="backupData"
+                            class="category-manage-btn"
+                            type="button">
+                            💾 Создать резервную копию
+                        </button>
+                        <br>
+                        <button
+                            id="restoreData"
+                            class="category-manage-btn"
+                            type="button">
+                            📂 Восстановить данные
+                        </button>
+
+                        <input
+                            type="file"
+                            id="backupFile"
+                            accept=".json,application/json"
+                            hidden>
+                    </div>
+
+                    <!-- О приложении -->
+                    <div class="settings-group">
+                        <h3>О приложении</h3>
+
+                        <div class="settings-info">
+                            <strong>₸ Копейки</strong>
+                            <span>Личный финансовый помощник</span>
+                            <span>Версия 1.0</span>
+                        </div>
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+
+        <!-- =================================
+             ОКНО ОПЕРАЦИИ
+             ================================= -->
+
+        <div id="operationModal" class="modal hidden">
+            <div class="modal-content">
+
+                <h2 id="modalTitle">Новая операция</h2>
+
+                <label>Сумма (₸)</label>
+                <input
+                    type="number"
+                    id="amount"
+                    placeholder="Например, 5000">
+
+                <label>Категория</label>
+                <select id="category">
+                    <option value="">Выбери категорию</option>
+                </select>
+
+                <label>Дата</label>
+                <input type="date" id="date">
+
+                <label>Комментарий</label>
+                <input
+                    type="text"
+                    id="comment"
+                    placeholder="Необязательно">
+
+                <button id="saveOperation">Сохранить</button>
+                <button id="closeModal">Отмена</button>
+
+            </div>
+        </div>
+
+
+        <!-- =================================
+             ОКНО КАТЕГОРИЙ
+             ================================= -->
+
+        <div id="categoryModal" class="modal hidden">
+            <div class="modal-content">
+
+                <h2>Мои категории</h2>
+
+                <label>Тип категории</label>
+
+                <select id="categoryType">
+                    <option value="expense">Расходы</option>
+                    <option value="income">Доходы</option>
+                </select>
+
+                <label>Название новой категории</label>
+
+                <input
+                    type="text"
+                    id="newCategory"
+                    placeholder="Например, Автомобиль">
+
+                <button id="addCategory">
+                    Добавить категорию
+                </button>
+
+                <div id="categoryList"></div>
+
+                <button id="closeCategoryModal">
+                    Закрыть
+                </button>
+
+            </div>
+        </div>
+
+
+        <!-- =================================
+             НИЖНЯЯ НАВИГАЦИЯ
+             ================================= -->
+
+        <nav class="bottom-nav">
+
+            <button
+                class="active"
+                type="button"
+                data-screen="home">
+                <span>⌂</span>
+                Главная
+            </button>
+
+            <button
+                type="button"
+                data-screen="history">
+                <span>◷</span>
+                История
+            </button>
+
+            <button
+                type="button"
+                data-screen="stats">
+                <span>▥</span>
+                Статистика
+            </button>
+
+            <button
+                type="button"
+                data-screen="settings">
+                <span>⚙</span>
+                Настройки
+            </button>
+
+        </nav>
+
+    </div>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
